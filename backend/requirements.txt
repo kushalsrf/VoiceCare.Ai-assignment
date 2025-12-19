@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+gunicorn
+pymongo
+psycopg2-binary

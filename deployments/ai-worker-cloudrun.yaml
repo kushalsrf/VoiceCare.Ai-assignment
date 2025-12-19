@@ -1,0 +1,14 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ai-worker
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "30"
+    spec:
+      serviceAccountName: worker-sa
+      containers:
+        - image: gcr.io/voicecare-prod/worker:latest
